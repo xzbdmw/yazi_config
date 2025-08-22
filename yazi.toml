@@ -3,13 +3,13 @@
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
 [manager]
-ratio          = [ 3, 5, 3 ]
+ratio          = [ 3, 5, 4 ]
 sort_by        = "mtime"
 sort_sensitive = false
 sort_reverse   = true
 sort_dir_first = true
 sort_translit  = false
-linemode       = "none"
+linemode       = "size"
 show_hidden    = false
 show_symlink   = true
 scrolloff      = 5
@@ -19,10 +19,10 @@ title_format   = "Yazi: {cwd}"
 [preview]
 wrap            = "no"
 tab_size        = 2
-max_width       =2000
+max_width       = 2000
 max_height      = 2000
 cache_dir       = ""
-image_delay     = 0
+image_delay     = 100
 image_filter    = "triangle"
 image_quality   = 75
 sixel_fraction  = 15
@@ -70,6 +70,8 @@ rules = [
 	# Folder
 	{ name = "*/", use = [ "edit", "open", "reveal" ] },
 	{ name = "*.html", use = [ "open", "edit" ] },
+	# CSV files should open with default app (Numbers)
+	{ name = "*.csv", use = [ "open", "edit", "reveal" ] },
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image
@@ -185,13 +187,13 @@ rename_offset = [ 0, 1, 50, 3 ]
 
 # filter
 filter_title  = "Filter:"
-filter_origin = "top-center"
-filter_offset = [ 0, 2, 50, 3 ]
+filter_origin = "bottom-left"
+filter_offset = [ 0, 0, 0, 3 ]
 
 # find
 find_title  = [ "Find next:", "Find previous:" ]
-find_origin = "top-center"
-find_offset = [ 0, 2, 50, 3 ]
+find_origin = "bottom-left"
+find_offset = [ 0, 0, 0, 3 ]
 
 # search
 search_title  = "Search via {n}:"
